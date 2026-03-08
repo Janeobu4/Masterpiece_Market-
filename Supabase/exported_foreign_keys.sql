@@ -1,0 +1,15 @@
+ALTER TABLE public.verifications ADD CONSTRAINT verifications_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE public.verifications ADD CONSTRAINT verifications_reviewer_id_fkey FOREIGN KEY (reviewer_id) REFERENCES public.users(id);
+ALTER TABLE public.payments ADD CONSTRAINT payments_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE public.audit_logs ADD CONSTRAINT audit_logs_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE public.listing_images ADD CONSTRAINT listing_images_post_id_fkey FOREIGN KEY (post_id) REFERENCES public.posts(id);
+ALTER TABLE public.posts ADD CONSTRAINT posts_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE public.likes ADD CONSTRAINT likes_post_id_fkey FOREIGN KEY (post_id) REFERENCES public.posts(id);
+ALTER TABLE public.likes ADD CONSTRAINT likes_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE public.reshares ADD CONSTRAINT reshares_post_id_fkey FOREIGN KEY (post_id) REFERENCES public.posts(id);
+ALTER TABLE public.reshares ADD CONSTRAINT reshares_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE public.comments ADD CONSTRAINT comments_post_id_fkey FOREIGN KEY (post_id) REFERENCES public.posts(id);
+ALTER TABLE public.comments ADD CONSTRAINT comments_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id);
+ALTER TABLE public.comments ADD CONSTRAINT comments_parent_comment_id_fkey FOREIGN KEY (parent_comment_id) REFERENCES public.comments(id);
+ALTER TABLE public.quote_requests ADD CONSTRAINT quote_requests_post_id_fkey FOREIGN KEY (post_id) REFERENCES public.posts(id);
+ALTER TABLE public.quote_requests ADD CONSTRAINT quote_requests_requester_user_id_fkey FOREIGN KEY (requester_user_id) REFERENCES public.users(id);
